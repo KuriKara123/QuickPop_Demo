@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../chat-page/chatstyle.css"> <!-- Link your stylesheet here -->
+    <title>QuickPops Chat</title>
+    <style>
+        /* Basic styling to resemble a chat application */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        
+        .app {
+            width: 80%;
+            max-width: 400px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        .join-screen, .chat-screen {
+            display: none;
+            padding: 20px;
+        }
+
+        .active {
+            display: block;
+        }
+
+        .join-screen input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        .join-screen button {
+            width: 100%;
+            padding: 10px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .chat-screen h2 {
+            text-align: center;
+        }
+
+        .messages {
+            height: 300px;
+            overflow-y: auto;
+            border: 1px solid #ddd;
+            padding: 10px;
+            background-color: #f1f1f1;
+            margin-bottom: 10px;
+        }
+
+        .message {
+            margin-bottom: 10px;
+            padding: 5px 10px;
+            border-radius: 4px;
+        }
+
+        .my-message {
+            background-color: #e1ffc7;
+            text-align: right;
+        }
+
+        .other-message {
+            background-color: #f1f1f1;
+        }
+
+        .update {
+            text-align: center;
+            font-size: 12px;
+            color: #777;
+        }
+
+        .message-box {
+            display: flex;
+            gap: 5px;
+        }
+
+        .message-box input {
+            flex: 1;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        .message-box button {
+            padding: 10px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .exit-chat {
+            margin-top: 10px;
+            width: 100%;
+            background-color: #ff4d4d;
+        }
+    </style>
+</head>
+<body>
+    <div class="app">
+        <!-- Join Screen -->
+        <div class="join-screen active">
+            <h2>Join QuickPops Chat</h2>
+            <input type="text" id="username" placeholder="Enter your email">
+            <input type="password" id="password" placeholder="Enter your password">
+            <button id="join-user">Join Chat</button>
+        </div>
+
+        <!-- Chat Screen -->
+        <div class="chat-screen">
+            <h2>Chat Room</h2>
+            <div class="messages"></div> <!-- Chat messages container -->
+            <div class="message-box">
+                <input type="text" id="message-input" placeholder="Type your message here...">
+                <button id="send-message">Send</button>
+            </div>
+            <button id="exit-chat" class="exit-chat">Exit Chat</button>
+        </div>
+    </div>
+
+    <script type="module" src="../chat-page/script.js"></script> <!-- Link to your chat logic script -->
+</body>
+</html>
